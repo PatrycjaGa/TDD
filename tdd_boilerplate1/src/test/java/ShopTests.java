@@ -19,20 +19,20 @@ public class ShopTests {
 
         shop.addMerchandise("Onion", 2.1);
 
-        int result = shop.getStock().size();
+        boolean isOnStock = shop.isOnStock("Onion");
 
-        Assertions.assertEquals(1, result);
-
-
-
-
-//        boolean isOnStock = shop.isOnStock("Onion");
-//
-//        assertTrue(isOnStock);
+        assertTrue(isOnStock);
     }
 
     @Test
     public void addMerchandiseAndCheckOnStockFail() {
+        Shop shop = new Shop("Test2");
+        shop.addMerchandise("Orange", 4.5);
+        shop.addMerchandise("Lemon", 2.3);
+
+        int result = shop.getStock().size();
+
+        Assertions.assertEquals(2, result);
         //todo: add implementation
     }
 
@@ -43,16 +43,24 @@ public class ShopTests {
         shop.addMerchandise("Onion", 2.1);
         boolean isOnStock = shop.isOnStock("onion");
 
-        assertTrue(isOnStock);
     }
 
     @Test
     public void addMerchandiseAndCheckItsPrice() {
+        Shop shop = new Shop("Test2");
+        shop.addMerchandise("Orange", 4.5);
+        shop.addMerchandise("Lemon", 2.3);
+        double lemon = shop.getMerchandisePrice("Lemon");
+
+        Assertions.assertEquals(2.3, lemon);
+
         //todo: add implementation
     }
 
     @Test
     public void updateMerchandisePrice() {
+
+
         //todo: add implementation
     }
 

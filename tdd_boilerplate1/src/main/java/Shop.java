@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class Shop {
 
     private String shopName;
@@ -17,6 +16,7 @@ public class Shop {
 
     /**
      * Shop name - finally the customer wants to recognize the shop
+     *
      * @return Shop name
      */
     public String getShopName() {
@@ -25,58 +25,72 @@ public class Shop {
 
     /**
      * Adds merchandise to the list
+     *
      * @param merchandiseName merchandise name
-     * @param basePrice base price without any sales
+     * @param basePrice       base price without any sales
      */
     public void addMerchandise(String merchandiseName, double basePrice) {
-        Shop shop = new Shop(shopName);
-        Merchandise merchandise = new Merchandise(merchandiseName,basePrice);
-        shop.stock.add(merchandise);
+
+        Merchandise merchandise = new Merchandise(merchandiseName, basePrice);
+        this.stock.add(merchandise);
         //todo: to be implemented
     }
 
     /**
      * Check if merchandise is on stock
+     *
      * @param merchandiseName merchandise name
      * @return true - is on stock, false - not on stock
      */
     public boolean isOnStock(String merchandiseName) {
-      if (stock.contains(merchandiseName)){
-        return true;
-        }else
+//        boolean present = stock.stream()
+//                .map(Merchandise::getName)
+//                .anyMatch(s -> s.equals(merchandiseName));
+//        if (present){
+//            return true;
+//        }
+//        return false;
+
+        for (Merchandise merchandise : stock){
+            if (merchandise.getName().equals(merchandiseName)){
+                return  true;
+            }
+        }
         return false;
-        //todo: to be implemented
+
+//        todo: to be implemented
     }
 
     /**
      * Returns the price of merchandise
+     *
      * @param merchandiseName merchandise name
      * @return price of merchandise
      */
     public double getMerchandisePrice(String merchandiseName) {
         for (Merchandise merchandise : stock) {
             if (isOnStock(merchandiseName)) {
-                return merchandise.getBasePrice();
-
+                return findMerchandiseByName(merchandiseName).getBasePrice();
             }
             //todo: to be implemented
         }
         return 0.0;
     }
 
-        /**
-         * Looks for merchandise by name, ignoring case
-         * @param merchandiseName searched merchandise
-         * @return merchandise object, if found, null if not found
-         */
-        private Merchandise findMerchandiseByName(String merchandiseName){
-            // todo: use this method in the others and make it case insensitive
-            for (Merchandise merchandise : stock) {
-                if (merchandise.getName().equalsIgnoreCase(merchandiseName))
-                    return merchandise;
-            }
-            return null;
+    /**
+     * Looks for merchandise by name, ignoring case
+     *
+     * @param merchandiseName searched merchandise
+     * @return merchandise object, if found, null if not found
+     */
+    private Merchandise findMerchandiseByName(String merchandiseName) {
+        // todo: use this method in the others and make it case insensitive
+        for (Merchandise merchandise : stock) {
+            if (merchandise.getName().equalsIgnoreCase(merchandiseName))
+                return merchandise;
         }
+        return null;
+    }
 
     public void setShopName(String shopName) {
         this.shopName = shopName;
