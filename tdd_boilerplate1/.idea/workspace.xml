@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bcf03fb-30b8-43e9-8628-47760eae7a0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ShopTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ShopTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.MerchandiseTests.checkIfPriceIsCorrectlyChanged">
+  <component name="RunManager" selected="Gradle.ShopTests.updateMerchandisePrice">
     <configuration name="MerchandiseTests.checkIfPriceIsCorrectlyChanged" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -136,12 +133,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ShopTests.addMerchandiseAndCheckOnStockFail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ShopTests.updateMerchandisePrice" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ShopTests.addMerchandiseAndCheckOnStockFail&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ShopTests.updateMerchandisePrice&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -158,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ShopTests.updateMerchandisePrice" />
         <item itemvalue="Gradle.MerchandiseTests.checkIfPriceIsCorrectlyChanged" />
         <item itemvalue="Gradle.ShopTests" />
         <item itemvalue="Gradle.ShopTests.addMerchandiseAndCheckOnStockCaseInsensitiveSuccess" />
         <item itemvalue="Gradle.ShopTests.addMerchandiseAndCheckItsPrice" />
-        <item itemvalue="Gradle.ShopTests.addMerchandiseAndCheckOnStockFail" />
       </list>
     </recent_temporary>
   </component>

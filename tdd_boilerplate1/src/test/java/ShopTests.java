@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -59,6 +60,11 @@ public class ShopTests {
 
     @Test
     public void updateMerchandisePrice() {
+        Merchandise merchandise = new Merchandise("Orange", 4.5);
+
+        merchandise.setNewBasePrice(5.6);
+
+        Assertions.assertEquals(5.6, merchandise.getBasePrice());
 
 
         //todo: add implementation
